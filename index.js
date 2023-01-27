@@ -870,15 +870,15 @@ morgan.token("res", function getResponseTime(req, res, field) {
 	return Array.isArray(header) ? header.join(", ") : header;
 });
 
-function formattedHeaderStringify(session) {
-	return Object.keys(session).reduce((accum, key) => {
-		const value = session[key];
-		return `${accum}${accum.length === 0 ? "" : ";"}${key}=${value}`;
-	}, "");
-}
+// function formattedHeaderStringify(session) {
+// 	return Object.keys(session).reduce((accum, key) => {
+// 		const value = session[key];
+// 		return `${accum}${accum.length === 0 ? "" : ";"}${key}=${value}`;
+// 	}, "");
+// }
 
 morgan.token("session", function getRequestHeadersToken(req) {
-	return formattedHeaderStringify(req.session);
+	return JSON.stringify(req.session);
 });
 
 /**
