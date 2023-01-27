@@ -452,7 +452,7 @@ module.exports = function morganBody(app, options) {
 					formatString +=
 						", " +
 						userAgentColor +
-						"User Agent: :user-agent" +
+						"User Agent: :user-agent , " +
 						defaultColor +
 						"Session :session" +
 						defaultColor;
