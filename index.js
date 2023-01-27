@@ -423,9 +423,7 @@ module.exports = function morganBody(app, options) {
 					methodColor +
 					":method " +
 					pathColor +
-					":url" +
-					pathColor +
-					":session";
+					":url";
 				if (logAllReqHeader) {
 					formatString += " headers[:request-headers]";
 				} else {
@@ -455,6 +453,8 @@ module.exports = function morganBody(app, options) {
 						", " +
 						userAgentColor +
 						"User Agent: :user-agent" +
+						defaultColor +
+						"Session :session" +
 						defaultColor;
 				fn = developmentFormatLine.func = compile(formatString);
 			}
