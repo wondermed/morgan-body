@@ -423,7 +423,9 @@ module.exports = function morganBody(app, options) {
 					methodColor +
 					":method " +
 					pathColor +
-					":url";
+					":url" +
+					pathColor +
+					":session";
 				if (logAllReqHeader) {
 					formatString += " headers[:request-headers]";
 				} else {
